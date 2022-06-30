@@ -1,0 +1,23 @@
+.btn-success{
+    // background linear gradient
+    background: linear-gradient(to left, $color3, $color2, $color1);
+    border: none;
+    padding: 7px 14px;
+    border-radius: 7px;
+}
+
+@media screen and(min-width: $lg){
+    .btn-inst{
+        font-size: 1.1rem;
+    }
+}
+@media screen and(min-width: $tab){
+    .btn-inst{
+        font-size: 1.3rem;
+    }
+}
+@media screen and(min-width: $tab-large){
+    .btn-inst{
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,374 @@
+body {
+    background-image: url('images/ru.jpg');
+}
+.errorMsg{
+    text-align: center;
+    width: 290px;
+    margin: 0 auto;
+    color: $color2;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-style: oblique;
+}
+.dir {
+    @include container;
+    &-search {
+        &-header {
+            @include flex-col;
+            @include flex-center;
+            & img {
+                margin-top: 35px;
+                width: 280px;
+            }
+        }
+        &-body {
+            transform: translateY(-25px);
+            & form {
+                transform: translateX(4px);
+                border-radius: 7px;
+                width: 280px;
+                @include flex-row;
+                margin: 0 auto;
+                & input {
+                    height: 30px;
+                    border: 1px solid transparent;
+                    padding-inline-start: 30px;
+                    border-radius: calc(0.5 * 44px);
+                    background-color: rgb(255, 255, 255);
+                    color: rgb(0, 0, 0);
+                    font-size: 1rem;
+                }
+                & button {
+                    border: 1px solid transparent;
+                    border-radius: 100%;
+                    padding: 8px;
+                    background-color: rgb(255, 255, 255);
+                    transform: translateY(-3px);
+                }
+            }
+        }
+        &-instructions{
+            @include container;
+            @include flex-col;
+            @include flex-center;
+            transform: translateY(-10px);
+            margin-bottom: 10px;
+            &--text{
+                @include container;
+                text-align: center;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    &-results {
+        padding-bottom: 50px;
+        @include container;
+        @include flex-col;
+        @include flex-center;
+        &--cards-container {
+            @include container;
+            @include flex-col;
+            @include flex-center;
+        }
+        &-card {
+            margin-bottom: 30px;
+            padding: 10px 14px;
+            min-width: 280px;
+            width: 280px;
+            height: 100%;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.7);
+            &-header {
+                border-bottom: 1px solid;
+                border-image-slice: 1;
+                border-image-source: linear-gradient(to left, $color1, $color2, $color3);
+                border-width: 1px;
+                @include container;
+                @include flex-row;
+                img {
+                    width: 90px;
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+    // Card-header JS
+    &-card-text {
+        @include container;
+        @include flex-col;
+        text-align: left;
+        font-weight: 800;
+        font-size: 1rem;
+    }
+}
+
+.search-icon {
+    font-size: 1.5rem;
+    color: $color3;
+}
+
+.card-title {
+    margin: 0;
+}
+
+.card-text {
+    margin: 0;
+}
+
+.pdv-info {
+    margin: 9px auto 12px auto;
+    color: $color2;
+    font-weight: 800;
+    text-align: center;
+    @include container;
+    @include flex-row;
+    @include flex-center;
+    font-size: 1rem;
+}
+
+.pdvnum {
+    margin-right: 3px;
+}
+
+.manager-info {
+    margin: 0 auto 3px auto;
+    width: fit-content;
+    height: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: #4e4e4e;
+    font-size: 1rem;
+}
+
+.leader-info {
+    width: fit-content;
+    height: 100%;
+    margin: 5px auto 4px auto;
+    padding-top: 5px;
+    border-top: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, $color1, $color2, $color3);
+    border-width: 1px;
+    text-align: center;
+    font-weight: 700;
+    color: #4e4e4e;
+    font-size: 1rem;
+}
+
+.managerPhone,
+.leaderPhone {
+    text-decoration: none;
+}
+
+@media screen and(min-width: $md) {
+    .dir {
+        &-search {
+            &-header {
+                & img {
+                    width: 320px;
+                }
+            }
+            &-body {
+                transform: translateY(-25px);
+                & form {
+                    width: 320px;
+                    & input {
+                        height: 33px;
+                    }
+                    & button {
+                        padding: 8px;
+                        transform: translateY(-3px);
+                    }
+                }
+                &--instructions {
+                    &-card {
+                        width: 320px !important;
+                    }
+                }
+            }
+        }
+        &-results {
+            &-card {
+                width: 310px;
+            }
+        }
+        // Card-header JS
+        &-card-text {
+            font-size: 1.1rem;
+        }
+    }
+    .pdv-info,
+    .manager-info,
+    .leader-info {
+        font-size: 1.1rem;
+    }
+    .search-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and(min-width: $lg) {
+    .dir {
+        &-search {
+            &-header {
+                & img {
+                    width: 360px;
+                }
+            }
+            &-body {
+                transform: translateY(-25px);
+                & form {
+                    width: 360px;
+                    & input {
+                        height: 35px;
+                        font-size: 1.1rem;
+                    }
+                    & button {
+                        padding: 8px;
+                        transform: translateY(-3px);
+                    }
+                }
+                &--instructions {
+                    font-size: 1.1rem;
+                    &-card {
+                        width: 360px !important;
+                    }
+                }
+            }
+            &-instructions{
+                &--text{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        &-results {
+            &-card {
+                padding: 15px 14px;
+                width: 370px;
+                &-header {
+                    img {
+                        width: 90px;
+                    }
+                }
+            }
+        }
+        // Card-header JS
+        &-card-text {
+            font-size: 1.2rem;
+        }
+    }
+    .pdv-info,
+    .manager-info,
+    .leader-info {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and(min-width: $tab) {
+    .dir {
+        &-search {
+            &-header {
+                & img {
+                    width: 470px;
+                }
+            }
+            &-body {
+                transform: translateY(-35px);
+                & form {
+                    transform: translateX(3px);
+                    width: 470px;
+                    & input {
+                        height: 40px;
+                        font-size: 1.2rem;
+                    }
+                    & button {
+                        transform: translateY(-3px);
+                    }
+                }
+            }
+        }
+        // Card-header JS
+        &-card-text {
+            font-size: 1.3rem;
+        }
+    }
+    .pdv-info,
+    .manager-info,
+    .leader-info {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and(min-width: $tab-large) {
+    .dir {
+        &-search {
+            &-header {
+                & img {
+                    width: 520px;
+                }
+            }
+            &-body {
+                transform: translateY(-35px);
+                & form {
+                    width: 520px;
+                    & input {
+                        height: 40px;
+                        font-size: 1.3rem;
+                    }
+                    & button {
+                        transform: translateY(-3px);
+                    }
+                }
+            }
+        }
+        &-results {
+            &-card{
+                margin: 0 15px 15px 15px;
+            }
+            &--cards {
+                &-container {
+                    overflow: hidden;
+                    @include container;
+                    @include flex-row;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+        // Card-header JS
+        &-card-text {
+            font-size: 1.4rem;
+        }
+    }
+    .pdv-info,
+    .manager-info,
+    .leader-info {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and(min-width: $desk) {
+    .dir {
+        &-search {
+            &-header {
+                & img {
+                    width: 520px;
+                }
+            }
+            &-body {
+                transform: translateY(-35px);
+                & form {
+                    width: 520px;
+                    & input {
+                        font-size: 1.4rem;
+                        height: 44px;
+                    }
+                    & button {
+                        padding: 12px;
+                        transform: translateY(-3px);
+                    }
+                }
+            }
+        }
+    }
+}

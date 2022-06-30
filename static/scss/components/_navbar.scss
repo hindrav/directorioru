@@ -1,0 +1,47 @@
+.navbar{
+    &-brand{
+        & img{
+            width: 130px;
+        }
+    }
+    &-toggler{
+        border: 2px solid;
+        border-image-slice: 1;
+        border-width: 2px;
+        border-image-source: linear-gradient(to left, $color1, $color2, $color3);
+        &-iconx{
+            background: linear-gradient($color1, $color2, $color3);
+            background-clip: text;
+        }
+    }
+}
+
+@media screen and(min-width: $tab){
+    .navbar{
+        &-brand{
+            & img{
+                width: 150px;
+            }
+        }
+    }
+}
+
+@media screen and(min-width: $tab-large){
+    .navbar{
+        &-brand{
+            & img{
+                width: 170px;
+            }
+        }
+    }
+}
+
+@media screen and(min-width: $desk){
+    .navbar{
+        &-brand{
+            & img{
+                width: 200px;
+            }
+        }
+    }
+}

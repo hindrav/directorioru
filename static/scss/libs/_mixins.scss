@@ -1,0 +1,21 @@
+@mixin container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+@mixin flex-col{
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-row{
+    display: flex;
+    flex-direction: row;
+}
+@mixin flex-center{
+    justify-content: center;
+    align-items: center;
+}
+@mixin background-img{
+    background-size: cover;
+    background-position: center;
+}

@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="admin">
+    <div class="admin-new">
+        <form action="/new" method="POST" class="card bg-light">
+            <div class="card-body p-4">
+                <h1 class="h5 mb-4">Add Contact</h1>
+                <div class="mb-3">
+                    <label for="terr">Selecciona un territorio:</label>
+                    <select name="terr" class="form-select rounded-0 bg-light border-0 " aria-label="Territory select">
+                        <option selected>Elige una opción</option>
+                        <option value='METRO CENTRO'>METRO CENTRO</option>
+                        <option value='METRO FORANEA'>METRO FORANEA</option>
+                        <option value='SURESTE'>SURESTE</option>
+                        <option value='GOLFO'>GOLFO</option>
+                        <option value='PACIFICO SUR'>PACIFICO SUR</option>
+                        <option value='OCCIDENTE'>OCCIDENTE</option>
+                        <option value='PUEBLA TLAXCALA'>PUEBLA TLAXCALA</option>
+                        <option value='METRO SUR'>METRO SUR</option>
+                        <option value='NORTE'>NORTE</option>
+                        <option value='SUR'>SUR</option>
+                        <option value='BAJIO'>BAJIO</option>
+                        <option value='CENTRO'>CENTRO</option>
+                        <option value='PACIFICO CENTRO'>PACIFICO CENTRO</option>
+                        <option value='METRO NORTE'>METRO NORTE</option>
+                        <option value='PACIFICO NORTE'>PACIFICO NORTE</option>
+                        <option value='BAJA CALIFORNIA SUR'>BAJA CALIFORNIA SUR</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="reg">Selecciona una región:</label>
+                    <select name="reg" class="form-select rounded-0 bg-light border-0 " aria-label="Territory select">
+                        <option selected>Elige una opción</option>
+                        <option value='REGION RU IZTACALCO'>REGION RU IZTACALCO</option>
+                        <option value='REGION RU TIANGUISTENGO'>REGION RU TIANGUISTENGO</option>
+                        <option value='REGION RU CAMPECHE'>REGION RU CAMPECHE</option>
+                        <option value='REGION RU CORDOBA'>REGION RU CORDOBA</option>
+                        <option value='REGION RU OMETEPEC'>REGION RU OMETEPEC</option>
+                        <option value='REGION RU TONALA JALISCO'>REGION RU TONALA JALISCO</option>
+                        <option value='REGION RU TEZIUTLAN'>REGION RU TEZIUTLAN</option>
+                        <option value='REGION RU ACAMBAY'>REGION RU ACAMBAY</option>
+                        <option value='REGION RU AMECAMECA'>REGION RU AMECAMECA</option>
+                        <option value='REGION RU COAHUILA'>REGION RU COAHUILA</option>
+                        <option value='REGION RU CHILPANCINGO'>REGION RU CHILPANCINGO</option>
+                        <option value='REGION RU OAXACA CENTRO'>REGION RU OAXACA CENTRO</option>
+                        <option value='REGION RU VILLAFLORES'>REGION RU VILLAFLORES</option>
+                        <option value='REGION RU COLIMA'>REGION RU COLIMA</option>
+                        <option value='REGION RU CD HIDALGO'>REGION RU CD HIDALGO</option>
+                        <option value='REGION RU GUZMAN'>REGION RU GUZMAN</option>
+                        <option value='REGION RU ZAMORA'>REGION RU ZAMORA</option>
+                        <option value='REGION RU PUERTO ESCONDIDO'>REGION RU PUERTO ESCONDIDO</option>
+                        <option value='REGION RU DOLORES HIDALGO'>REGION RU DOLORES HIDALGO</option>
+                        <option value='REGION RU PATZCUARO'>REGION RU PATZCUARO</option>
+                        <option value='REGION RU URUAPAN'>REGION RU URUAPAN</option>
+                        <option value='REGION RU PICHUCALCO'>REGION RU PICHUCALCO</option>
+                        <option value='REGION RU OCOTLAN'>REGION RU OCOTLAN</option>
+                        <option value='REGION RU PAPANTLA'>REGION RU PAPANTLA</option>
+                        <option value='REGION RU HUAJUAPAN DE LEON'>REGION RU HUAJUAPAN DE LEON</option>
+                        <option value='REGION RU CHETUMAL'>REGION RU CHETUMAL</option>
+                        <option value='REGION RU TEPEACA'>REGION RU TEPEACA</option>
+                        <option value='REGION RU CUAUTLA'>REGION RU CUAUTLA</option>
+                        <option value='REGION RU ALTAMIRANO'>REGION RU ALTAMIRANO</option>
+                        <option value='REGION RU IZUCAR DE MATAMOROS'>REGION RU IZUCAR DE MATAMOROS</option>
+                        <option value='REGION RU DURANGO SUR'>REGION RU DURANGO SUR</option>
+                        <option value='REGION RU ZACATECAS'>REGION RU ZACATECAS</option>
+                        <option value='REGION RU MATEHUALA'>REGION RU MATEHUALA</option>
+                        <option value='REGION RU HUEJUTLA'>REGION RU HUEJUTLA</option>
+                        <option value='REGION RU MARTINEZ DE LA TORRE'>REGION RU MARTINEZ DE LA TORRE</option>
+                        <option value='REGION RU ACAYUCAN'>REGION RU ACAYUCAN</option>
+                        <option value='REGION RU PLAYA DEL CARMEN'>REGION RU PLAYA DEL CARMEN</option>
+                        <option value='REGION RU TIZAYUCA'>REGION RU TIZAYUCA</option>
+                        <option value='REGION RU VALLE DE BRAVO'>REGION RU VALLE DE BRAVO</option>
+                        <option value='REGION RU CUERNAVACA'>REGION RU CUERNAVACA</option>
+                        <option value='REGION RU RENACIMIENTO'>REGION RU RENACIMIENTO</option>
+                        <option value='REGION RU BOCA DEL RIO'>REGION RU BOCA DEL RIO</option>
+                        <option value='REGION RU APATZINGAN'>REGION RU APATZINGAN</option>
+                        <option value='REGION RU MANZANILLO'>REGION RU MANZANILLO</option>
+                        <option value='REGION RU TLAXCALA'>REGION RU TLAXCALA</option>
+                        <option value='REGION RU SAN JUAN DEL RIO'>REGION RU SAN JUAN DEL RIO</option>
+                        <option value='REGION RU ZUMPANGO'>REGION RU ZUMPANGO</option>
+                        <option value='REGION RU TEPIC'>REGION RU TEPIC</option>
+                        <option value='REGION RU PENJAMO'>REGION RU PENJAMO</option>
+                        <option value='REGION RU NAVOJOA'>REGION RU NAVOJOA</option>
+                        <option value='REGION RU BALDERAS'>REGION RU BALDERAS</option>
+                        <option value='REGION RU CASAS ALEMAN'>REGION RU CASAS ALEMAN</option>
+                        <option value='REGION RU MONCLOVA'>REGION RU MONCLOVA</option>
+                        <option value='REGION RU ACAPULCO CENTRO'>REGION RU ACAPULCO CENTRO</option>
+                        <option value='REGION RU MINATITLAN'>REGION RU MINATITLAN</option>
+                        <option value='REGION RU TUXPAN'>REGION RU TUXPAN</option>
+                        <option value='REGION RU MAZATLAN'>REGION RU MAZATLAN</option>
+                        <option value='REGION RU VILLA DE ETLA'>REGION RU VILLA DE ETLA</option>
+                        <option value='REGION RU TLAJOMULCO'>REGION RU TLAJOMULCO</option>
+                        <option value='REGION RU NOGALES'>REGION RU NOGALES</option>
+                        <option value='REGION RU PUEBLA SUR ATLIXCO'>REGION RU PUEBLA SUR ATLIXCO</option>
+                        <option value='REGION RU CD JUAREZ'>REGION RU CD JUAREZ</option>
+                        <option value='REGION RU MOROLEON'>REGION RU MOROLEON</option>
+                        <option value='REGION RU TONALA'>REGION RU TONALA</option>
+                        <option value='REGION RU COMALCALCO'>REGION RU COMALCALCO</option>
+                        <option value='REGION RU CD VALLES'>REGION RU CD VALLES</option>
+                        <option value='REGION RU TAMPICO'>REGION RU TAMPICO</option>
+                        <option value='REGION RU CD VICTORIA'>REGION RU CD VICTORIA</option>
+                        <option value='REGION RU TICUL'>REGION RU TICUL</option>
+                        <option value='REGION RU VALLADOLID'>REGION RU VALLADOLID</option>
+                        <option value='REGION RU LORETO ZACATECAS'>REGION RU LORETO ZACATECAS</option>
+                        <option value='REGION RU EL SALTO'>REGION RU EL SALTO</option>
+                        <option value='REGION RU SANTA ELENA'>REGION RU SANTA ELENA</option>
+                        <option value='REGION RU TESISTAN'>REGION RU TESISTAN</option>
+                        <option value='REGION RU CHIHUAHUA'>REGION RU CHIHUAHUA</option>
+                        <option value='REGION RU PUERTO VALLARTA'>REGION RU PUERTO VALLARTA</option>
+                        <option value='REGION RU TIJUANA LAS TORRES'>REGION RU TIJUANA LAS TORRES</option>
+                        <option value='REGION RU ZIHUATANEJO'>REGION RU ZIHUATANEJO</option>
+                        <option value='REGION RU XOCHIMILCO'>REGION RU XOCHIMILCO</option>
+                        <option value='REGION RU ATLACOMULCO'>REGION RU ATLACOMULCO</option>
+                        <option value='REGION RU CULIACAN'>REGION RU CULIACAN</option>
+                        <option value='REGION RU MERIDA'>REGION RU MERIDA</option>
+                        <option value='REGION RU SOLIDARIDAD'>REGION RU SOLIDARIDAD</option>
+                        <option value='REGION RU DURANGO NORTE'>REGION RU DURANGO NORTE</option>
+                        <option value='REGION RU SALTILLO'>REGION RU SALTILLO</option>
+                        <option value='REGION RU MONTERREY'>REGION RU MONTERREY</option>
+                        <option value='REGION RU VALLE VERDE'>REGION RU VALLE VERDE</option>
+                        <option value='REGION RU LA PAZ'>REGION RU LA PAZ</option>
+                        <option value='REGION RU SANTA FE'>REGION RU SANTA FE</option>
+                        <option value='REGION RU CHICONCUAC'>REGION RU CHICONCUAC</option>
+                        <option value='REGION RU REYNOSA'>REGION RU REYNOSA</option>
+                        <option value='REGION RU NUEVO VALLARTA'>REGION RU NUEVO VALLARTA</option>
+                        <option value='REGION RU TORREON'>REGION RU TORREON</option>
+                        <option value='REGION RU MEXICALI'>REGION RU MEXICALI</option>
+                        <option value='REGION RU MATAMOROS'>REGION RU MATAMOROS</option>
+                        <option value='REGION RU METEPEC'>REGION RU METEPEC</option>
+                        <option value='REGION RU ZACATLAN'>REGION RU ZACATLAN</option>
+                        <option value='REGION RU EL DORADO'>REGION RU EL DORADO</option>
+                        <option value='REGION RU NICOLAS ROMERO'>REGION RU NICOLAS ROMERO</option>
+                        <option value='REGION RU CD DEL CARMEN'>REGION RU CD DEL CARMEN</option>
+                        <option value='REGION RU TULANCINGO'>REGION RU TULANCINGO</option>
+                        <option value='REGION RU TUXTEPEC'>REGION RU TUXTEPEC</option>
+                        <option value='REGION RU TIJUANA CENTRO'>REGION RU TIJUANA CENTRO</option>
+                        <option value='REGION RU JIUTEPEC'>REGION RU JIUTEPEC</option>
+                        <option value='REGION RU TEQUILA'>REGION RU TEQUILA</option>
+                        <option value='REGION RU TEHUACAN'>REGION RU TEHUACAN</option>
+                        <option value='REGION RU VALLE DE SANTIAGO'>REGION RU VALLE DE SANTIAGO</option>
+                        <option value='REGION RU SAN CRISTOBAL DE LAS CASAS'>REGION RU SAN CRISTOBAL DE LAS CASAS</option>
+                        <option value='REGION RU TLAQUEPAQUE'>REGION RU TLAQUEPAQUE</option>
+                        <option value='REGION RU LOS MOCHIS'>REGION RU LOS MOCHIS</option>
+                        <option value='REGION RU MORELIA NORTE'>REGION RU MORELIA NORTE</option>
+                        <option value='REGION RU HUIXTLA'>REGION RU HUIXTLA</option>
+                        <option value='REGION RU DELICIAS'>REGION RU DELICIAS</option>
+                        <option value='REGION RU HERMOSILLO'>REGION RU HERMOSILLO</option>
+                        <option value='REGION RU AGUASCALIENTES'>REGION RU AGUASCALIENTES</option>
+                        <option value='REGION RU TAXCO'>REGION RU TAXCO</option>
+                        <option value='REGION RU MERIDA FORANEA'>REGION RU MERIDA FORANEA</option>
+                        <option value='REGION RU SALINA CRUZ'>REGION RU SALINA CRUZ</option>
+                        <option value='REGION RU LOS ALTOS'>REGION RU LOS ALTOS</option>
+                        <option value='REGION RU TENANCINGO'>REGION RU TENANCINGO</option>
+                        <option value='REGION RU JALAPA'>REGION RU JALAPA</option>
+                        <option value='REGION RU ORIZABA'>REGION RU ORIZABA</option>
+                        <option value='REGION RU VERACRUZ PIEDRAS NEGRAS'>REGION RU VERACRUZ PIEDRAS NEGRAS</option>
+                        <option value='REGION RU PALENQUE'>REGION RU PALENQUE</option>
+                        <option value='REGION RU SAN ANDRES TUXTLA'>REGION RU SAN ANDRES TUXTLA</option>
+                        <option value='REGION RU COMITAN'>REGION RU COMITAN</option>
+                        <option value='REGION RU CADEREYTA'>REGION RU CADEREYTA</option>
+                        <option value='REGION RU CUNDUACAN'>REGION RU CUNDUACAN</option>
+                        <option value='REGION RU LAGOS DE MORENO'>REGION RU LAGOS DE MORENO</option>
+                        <option value='REGION RU LOS CABOS'>REGION RU LOS CABOS</option>
+                        <option value='REGION RU ENSENADA'>REGION RU ENSENADA</option>
+                        <option value='REGION RU ZAPOPAN'>REGION RU ZAPOPAN</option>
+                        <option value='REGION RU SANTA MARTHA'>REGION RU SANTA MARTHA</option>
+                        <option value='REGION RU JOJUTLA'>REGION RU JOJUTLA</option>
+                        <option value='REGION RU CANCUN'>REGION RU CANCUN</option>
+                        <option value='REGION RU JILOTEPEC CD JUAREZ'>REGION RU JILOTEPEC CD JUAREZ</option>
+                        <option value='REGION RU TEXCOCO'>REGION RU TEXCOCO</option>
+                        <option value='REGION RU NETZAHUALCOYOTL LOS PATOS'>REGION RU NETZAHUALCOYOTL LOS PATOS</option>
+                        <option value='REGION RU PUEBLA CAPU CENTRO'>REGION RU PUEBLA CAPU CENTRO</option>
+                        <option value='REGION RU TOLUCA'>REGION RU TOLUCA</option>
+                        <option value='REGION RU TLALNEPANTLA'>REGION RU TLALNEPANTLA</option>
+                        <option value='REGION RU IZCALLI'>REGION RU IZCALLI</option>
+                        <option value='REGION RU TLAHUAC'>REGION RU TLAHUAC</option>
+                        <option value='REGION RU MACUSPANA'>REGION RU MACUSPANA</option>
+                        <option value='REGION RU LEON'>REGION RU LEON</option>
+                        <option value='REGION RU MORELIA CENTRO'>REGION RU MORELIA CENTRO</option>
+                        <option value='REGION RU PUEBLA NORTE ORIENTE'>REGION RU PUEBLA NORTE ORIENTE</option>
+                        <option value='REGION RU COYUCA DE BENITEZ'>REGION RU COYUCA DE BENITEZ</option>
+                        <option value='REGION RU AJUSCO'>REGION RU AJUSCO</option>
+                        <option value='REGION RU COACALCO'>REGION RU COACALCO</option>
+                        <option value='REGION RU GUANAJUATO'>REGION RU GUANAJUATO</option>
+                        <option value='REGION RU PACHUCA'>REGION RU PACHUCA</option>
+                        <option value='REGION RU CUAUTITLAN'>REGION RU CUAUTITLAN</option>
+                        <option value='REGION RU CELAYA'>REGION RU CELAYA</option>
+                        <option value='REGION RU IZTAPALAPA'>REGION RU IZTAPALAPA</option>
+                        <option value='REGION RU IXMIQUILPAN'>REGION RU IXMIQUILPAN</option>
+                        <option value='REGION RU TAPACHULA'>REGION RU TAPACHULA</option>
+                        <option value='REGION RU SAN ANGEL'>REGION RU SAN ANGEL</option>
+                        <option value='REGION RU VERACRUZ CENTRO'>REGION RU VERACRUZ CENTRO</option>
+                        <option value='REGION RU EL SOL'>REGION RU EL SOL</option>
+                        <option value='REGION RU GUSTAVO A MADERO'>REGION RU GUSTAVO A MADERO</option>
+                        <option value='REGION RU CD MADERO'>REGION RU CD MADERO</option>
+                        <option value='REGION RU ECATEPEC'>REGION RU ECATEPEC</option>
+                        <option value='REGION RU VALLE DE CHALCO'>REGION RU VALLE DE CHALCO</option>
+                        <option value='REGION RU CD AZTECA'>REGION RU CD AZTECA</option>
+                        <option value='REGION RU AZCAPOTZALCO'>REGION RU AZCAPOTZALCO</option>
+                        <option value='REGION RU CHIMALHUACAN'>REGION RU CHIMALHUACAN</option>
+                        <option value='REGION RU SAN LUIS POTOSI'>REGION RU SAN LUIS POTOSI</option>
+                        <option value='REGION RU TEXMELUCAN CHOLULA'>REGION RU TEXMELUCAN CHOLULA</option>
+                        <option value='REGION RU SALAMANCA'>REGION RU SALAMANCA</option>
+                        <option value='REGION RU TULA'>REGION RU TULA</option>
+                        <option value='REGION RU IXTAPALUCA'>REGION RU IXTAPALUCA</option>
+                        <option value='REGION RU CUAUTEPEC'>REGION RU CUAUTEPEC</option>
+                        <option value='REGION RU QUERETARO SATELITE'>REGION RU QUERETARO SATELITE</option>
+                        <option value='REGION RU TAXQUENA'>REGION RU TAXQUENA</option>
+                        <option value='REGION RU NAUCALPAN'>REGION RU NAUCALPAN</option>
+                        <option value='REGION RU TULTITLAN'>REGION RU TULTITLAN</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="pdvnum"># Punto de venta:</label>
+                    <input type="number" name="pdvnum" class="form-control rounded-0 bg-light border-0 "
+                        placeholder="# PDV" required />
+                </div>
+                <div class="mb-3">
+                    <label for="pdvname">Escribe el nombre del punto de venta:</label>
+                    <input type="text" name="pdvname" class="form-control rounded-0 bg-light border-0 "
+                        placeholder="Nombre PDV" />
+                </div>
+                <div class="mb-3">
+                    <label for="manager">Escribe el nombre del Gerente Líder PDV:</label>
+                    <input type="text" name="manager" class="form-control rounded-0 bg-light border-0 "
+                        placeholder="Gerente Líder PDV" />
+                </div>
+                <div class="mb-3">
+                    <label for="managerPhone">Teléfono Gerente Líder PDV:</label>
+                    <input type="number" name="managerPhone" class="form-control rounded-0 bg-light border-0 "
+                        placeholder="+5555555555" />
+                </div>
+                <div class="mb-3">
+                    <label for="leader">Escribe el nombre del Líder PDV:</label>
+                    <input type="text" name="leader" class="form-control rounded-0 bg-light border-0 "
+                        placeholder="Líder PDV" />
+                </div>
+                <div class="mb-3">
+                    <label for="leaderPhone">Teléfono Líder PDV</label>
+                    <input type="number" name="leaderPhone" class="form-control rounded-0 bg-light border-0 "
+                        placeholder="+5555555555" />
+                </div>
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- contacts list -->
+<div class="col-md-7">
+    {% for contact in contacts %}
+    <div class="card mb-1 bg-light ">
+        <div class="card-body py-2 px-3">
+            <div class="d-flex justify-content-between">
+                <h5 class="card-title h6">Contacto</h5>
+                <div>
+                    <a href="{{ url_for('contacts.update', id=contact.id) }}"
+                        class="btn btn-dark btn-sm rounded-0">Edit</a>
+                    <a href="{{ url_for('contacts.delete', id=contact.id) }}"
+                        class="btn btn-danger btn-sm rounded-0">Delete</a>
+                </div>
+            </div>
+            <div class="card-footer">
+                <p class="card-text">{{ contact.terr }}</p>
+                <p class="card-text">{{ contact.reg }}</p>
+                <p class="card-text">{{ contact.pdvnum }}</p>
+                <p class="card-text">{{ contact.pdvname }}</p>
+                <p class="card-text">{{ contact.manager }}</p>
+                <p class="card-text">{{ contact.managerPhone }}</p>
+                <p class="card-text">{{ contact.leader }}</p>
+                <p class="card-text">{{ contact.leaderPhone }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

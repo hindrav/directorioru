@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+
+<section class="dir">
+    <div class="dir-container">
+        <div class="dir-search">
+            <figure class="dir-search-header">
+                <img src="{{ url_for('static', filename='images/logodru.png') }}" alt="Logo directorio RU">
+            </figure>
+            <div class="dir-search-body">
+                <form action="/" class="d-flex" role="search" method="POST">
+                    <input id="form" name="formid" class="form-control me-2" type="search" placeholder="Buscar..."
+                        aria-label="Search">
+                    <button id="button" type="button"><i class="search-icon fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="dir-search-instructions">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success btn-inst" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Recomendaciones de uso
+                </button>
+            </div>
+        </div>
+        <div class="dir-results">
+            <div id="results" class="dir-results--cards-container">
+            </div>
+        </div>
+</section>
+{% endblock %}
