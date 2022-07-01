@@ -1,0 +1,172 @@
+.admin{
+    @include container;
+    @include flex-col;
+    @include flex-center;
+    &-new{
+        border-radius: 12px;
+        margin-top: 30px;
+        min-width: 290px;
+        width: 290px;
+        height: 100%;
+        font-size: 1rem;
+        font-weight: 500;
+        &-card{
+            min-width: 290px;
+            width: 290px;
+            & select{
+                width: 100%;
+            }
+            & input{
+                width: 100%;
+            }
+        }
+    }
+    &-crud{
+        font-size: 1rem;
+        margin-top: 15px;
+        min-width: 290px;
+        width: 290px;
+        font-weight: 500;
+        &-card{
+            border-radius: 12px;
+            margin: 15px auto;
+            min-width: 290px;
+            width: 290px;
+            &-title{
+                padding: 10px;
+            }
+            &-titles{
+                margin: 4px auto;
+                @include container;
+                @include flex-col;
+            }
+            &-pdv{
+                margin: 10px auto;
+                @include container;
+                @include flex-col;
+            }
+            &-manager{
+                margin: 10px auto;
+                @include container;
+                @include flex-col;
+            }
+            &-leader{
+                margin: 10px auto;
+                @include container;
+                @include flex-col;
+            }
+        }
+    }
+}
+
+@media screen and(min-width: $md){
+    .admin{
+        &-new{
+            width: 320px;
+            font-size: 1.1rem;
+            &-card{
+                min-width: 320px;
+                width: 320px;
+            }
+        }
+        &-crud{
+            &-card{
+                width: 320px;
+            }
+            width: 320px;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media screen and(min-width: $lg){
+    .admin{
+        &-new{
+            width: 360px;
+            font-size: 1.2rem;
+            &-card{
+                min-width: 360px;
+                width: 360px;
+            }
+        }
+        &-crud{
+            &-card{
+                width: 360px;
+            }
+            width: 360px;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media screen and(min-width: $tab){
+    .admin{
+        &-new{
+            font-size: 1.3rem;
+            &-card{
+                min-width: 500px;
+                width: 500px;
+            }
+            width: 500px;
+            font-size: 1.3rem;
+        }
+        &-crud{
+            width: 500px;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media screen and(min-width: $tab-large){
+    .admin{
+        @include flex-row;
+        align-items: start;
+        &-new{
+            margin-right: 25px;
+            font-size: 1.4rem;
+            width: fit-content;
+            &-card{
+                @include container;
+            }
+        }
+        &-crud{
+            width: fit-content;
+            height: 100%;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media screen and (min-width: $desk){
+    .admin{
+        @include flex-row;
+        align-items: start;
+        &-new{
+            margin-right: 25px;
+            font-size: 1.4rem;
+            width: 40%;
+            &-card{
+                @include container;
+            }
+        }
+        &-crud{
+            display: flex;
+            flex-wrap: wrap;
+            width: 55%;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media screen and (min-width: $desk-large){
+    .admin{
+        &-new{
+            margin-right: 10px;
+        }
+        &-crud{
+            &-card{
+                width: 390px;
+            }
+        }
+    }
+}

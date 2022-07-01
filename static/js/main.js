@@ -58,7 +58,7 @@ async function getValue(){
                         </div>
                         <div class="leader-info">
                             <p class="card-text leader"><span style="color: #000";>Líder Comercial:</span> <br> ${element[6]}</p>
-                            <a href="${element[7]}" class="card-text leaderPhone"><span style="color: #000";>Teléfono:</span> ${element[7]}</a>
+                            <a href="tel:${element[7]}" class="card-text leaderPhone"><span style="color: #000";>Teléfono:</span> ${element[7]}</a>
                         </div>
                     </div>
                 `

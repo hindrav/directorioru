@@ -1,5 +1,7 @@
 body {
     background-image: url('images/ru.jpg');
+    background-position: top center;
+    background-repeat: repeat;
 }
 .errorMsg{
     text-align: center;
@@ -48,15 +50,10 @@ body {
             }
         }
         &-instructions{
-            @include container;
-            @include flex-col;
-            @include flex-center;
-            transform: translateY(-10px);
-            margin-bottom: 10px;
             &--text{
-                @include container;
-                text-align: center;
                 font-size: 1.2rem;
+                text-align: center;
+                font-weight: 500;
             }
         }
     }
@@ -178,7 +175,6 @@ body {
                     }
                     & button {
                         padding: 8px;
-                        transform: translateY(-3px);
                     }
                 }
                 &--instructions {
@@ -226,7 +222,6 @@ body {
                     }
                     & button {
                         padding: 8px;
-                        transform: translateY(-3px);
                     }
                 }
                 &--instructions {
@@ -282,9 +277,6 @@ body {
                         height: 40px;
                         font-size: 1.2rem;
                     }
-                    & button {
-                        transform: translateY(-3px);
-                    }
                 }
             }
         }
@@ -315,9 +307,6 @@ body {
                     & input {
                         height: 40px;
                         font-size: 1.3rem;
-                    }
-                    & button {
-                        transform: translateY(-3px);
                     }
                 }
             }
@@ -365,7 +354,6 @@ body {
                     }
                     & button {
                         padding: 12px;
-                        transform: translateY(-3px);
                     }
                 }
             }

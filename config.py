@@ -12,4 +12,4 @@ database = os.environ["MYSQL_DATABASE"]
 DATABASE_CONNECTION_URI = f'mysql://{user}:{password}@{host}/{database}'
 print(DATABASE_CONNECTION_URI)
 
-engine = create_engine(DATABASE_CONNECTION_URI, pool_size=20, max_overflow=0)
+engine = create_engine(DATABASE_CONNECTION_URI, pool_size=100, max_overflow=0)

@@ -4,8 +4,8 @@
 <section class="admin">
     <div class="admin-new">
         <form action="/new" method="POST" class="card bg-light">
-            <div class="card-body p-4">
-                <h1 class="h5 mb-4">Add Contact</h1>
+            <div class="admin-new-card card-body p-4">
+                <h1 class="h5 mb-4">Crea un nuevo contacto</h1>
                 <div class="mb-3">
                     <label for="terr">Selecciona un territorio:</label>
                     <select name="terr" class="form-select rounded-0 bg-light border-0 " aria-label="Territory select">
@@ -245,34 +245,42 @@
             </div>
         </form>
     </div>
-</section>
-
-<!-- contacts list -->
-<div class="col-md-7">
-    {% for contact in contacts %}
-    <div class="card mb-1 bg-light ">
-        <div class="card-body py-2 px-3">
-            <div class="d-flex justify-content-between">
-                <h5 class="card-title h6">Contacto</h5>
-                <div>
-                    <a href="{{ url_for('contacts.update', id=contact.id) }}"
-                        class="btn btn-dark btn-sm rounded-0">Edit</a>
-                    <a href="{{ url_for('contacts.delete', id=contact.id) }}"
-                        class="btn btn-danger btn-sm rounded-0">Delete</a>
+    <!-- contacts list -->
+    <div class="admin-crud">
+        {% for contact in contacts %}
+        <div class="card mb-1 bg-light admin-crud-card">
+            <div class="card-body py-2 px-3">
+                <div class="d-flex justify-content-between">
+                    <h5 class="card-title h6 admin-crud-card-title">Contacto</h5>
+                    <div>
+                        <a href="{{ url_for('contacts.update', id=contact.id) }}"
+                            class="btn btn-dark btn-sm rounded-0">Edit</a>
+                        <a href="{{ url_for('contacts.delete', id=contact.id) }}"
+                            class="btn btn-danger btn-sm rounded-0">Delete</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="admin-crud-card-titles">
+                        <p class="card-text">TERRITORIO {{ contact.terr }}</p>
+                        <p class="card-text">{{ contact.reg }}</p>
+                    </div>
+                    <div class="admin-crud-card-pdv">
+                        <p class="card-text"><strong>#PDV</strong> - {{ contact.pdvnum }}</p>
+                        <p class="card-text"><strong>Nombre PDV</strong> - {{ contact.pdvname }}</p>
+                    </div>
+                    <div class="admin-crud-card-manager">
+                        <p class="card-text"><strong>Gerente Líder PDV</strong> - {{ contact.manager }}</p>
+                        <p class="card-text"><strong>Teléfono</strong> - {{ contact.managerPhone }}</p>
+                    </div>
+                    <div class="admin-crud-card-leader">
+                        <p class="card-text"><strong>Líder Comercial</strong> - {{ contact.leader }}</p>
+                        <p class="card-text"><strong>Teléfono</strong> - {{ contact.leaderPhone }}</p>
+                    </div>
                 </div>
             </div>
-            <div class="card-footer">
-                <p class="card-text">{{ contact.terr }}</p>
-                <p class="card-text">{{ contact.reg }}</p>
-                <p class="card-text">{{ contact.pdvnum }}</p>
-                <p class="card-text">{{ contact.pdvname }}</p>
-                <p class="card-text">{{ contact.manager }}</p>
-                <p class="card-text">{{ contact.managerPhone }}</p>
-                <p class="card-text">{{ contact.leader }}</p>
-                <p class="card-text">{{ contact.leaderPhone }}</p>
-            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
+</section>
+
 {% endblock %}
