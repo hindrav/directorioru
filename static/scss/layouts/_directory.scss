@@ -7,7 +7,7 @@ body {
     text-align: center;
     width: 290px;
     margin: 0 auto;
-    color: $color2;
+    color: rgb(26, 26, 26);
     font-size: 1.1rem;
     font-weight: 700;
     font-style: oblique;
@@ -77,6 +77,8 @@ body {
             border-radius: 14px;
             box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.7);
             &-header {
+                @include flex-col;
+                @include flex-center;
                 border-bottom: 1px solid;
                 border-image-slice: 1;
                 border-image-source: linear-gradient(to left, $color1, $color2, $color3);
@@ -258,6 +260,11 @@ body {
     .leader-info {
         font-size: 1.2rem;
     }
+    .errorMsg{
+        font-size: 1.2rem;
+        width: 400px;
+
+    }
 }
 
 @media screen and(min-width: $tab) {
@@ -288,6 +295,9 @@ body {
     .pdv-info,
     .manager-info,
     .leader-info {
+        font-size: 1.3rem;
+    }
+    .errorMsg{
         font-size: 1.3rem;
     }
 }
@@ -332,6 +342,9 @@ body {
     .pdv-info,
     .manager-info,
     .leader-info {
+        font-size: 1.4rem;
+    }
+    .errorMsg{
         font-size: 1.4rem;
     }
 }

@@ -2,8 +2,8 @@ const btn = document.getElementById('button')
 const results = document.getElementById('results')
 const form = document.getElementById('form')
 
-async function getValue(){
-    try{
+async function getValue() {
+    try {
         const req = await fetch("/filter", {
             headers: {
                 'Content-Type': 'application/json'
@@ -16,23 +16,21 @@ async function getValue(){
         })
         const data = await req
         const text = await data.text()
-        // Split text in array of strings
+            // Split text in array of strings
         const array = text.split(',')
-        // Remove from array all "[ and ] and '"
-        const array2 = array.map(function(item){
-            return item.replace(/[\[\]']/g, '')
-        }
-        )
-        // Save multiples array for each 8 elements in a new array
+            // Remove from array all "[ and ] and '"
+        const array2 = array.map(function(item) {
+                return item.replace(/[\[\]']/g, '')
+            })
+            // Save multiples array for each 8 elements in a new array
         const array3 = []
-        for(let i = 0; i < array2.length; i+=8){
-            array3.push(array2.slice(i, i+8))
+        for (let i = 0; i < array2.length; i += 8) {
+            array3.push(array2.slice(i, i + 8))
         }
         // if array contains "404NOTFOUND" then display error message
-        if(text == "404NOTFOUND"){
+        if (text == "404NOTFOUND") {
             results.innerHTML = `<p class="errorMsg">No se encontraron resultados de búsqueda, intenta nuevamente.</p>`
-        }
-        else{
+        } else {
             // Create a card for each array and append it to the results div
             array3.forEach(element => {
                 const card = document.createElement('div')
@@ -65,27 +63,38 @@ async function getValue(){
                 results.appendChild(card)
             })
         }
-    }
-    catch(err){
+    } catch (err) {
         console.log(err)
     }
 }
 
 btn.addEventListener('click', () => {
     results.innerHTML = ''
-    if(form.value != ''){
-        getValue()
+    if (form.value != '') {
+        const request = getValue()
+            // When user clicks on the button, while the request is being processed, display a loading message
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin search-load"></i>'
+        btn.disabled = true
+        request.then(() => {
+            btn.disabled = false
+            btn.innerHTML = '<i class="search-icon fas fa-search"></i>'
+        })
     }
 })
 
 form.addEventListener('keypress', (e) => {
-    if(e.keyCode == 13){
+    if (e.keyCode == 13) {
         results.innerHTML = ''
-        if(form.value != ''){
+        if (form.value != '') {
             e.preventDefault()
-            getValue()
+            const request = getValue()
+                // When user clicks on the button, while the request is being processed, display a loading message
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin search-load"></i>'
+            btn.disabled = true
+            request.then(() => {
+                btn.disabled = false
+                btn.innerHTML = '<i class="search-icon fas fa-search"></i>'
+            })
         }
     }
 })
-
-

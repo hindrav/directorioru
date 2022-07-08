@@ -1,8 +1,15 @@
-.admin{
+.admin {
     @include container;
     @include flex-col;
     @include flex-center;
-    &-new{
+    &-new {
+        & form {
+            & input,
+            & select,
+            & option {
+                font-size: 1rem;
+            }
+        }
         border-radius: 12px;
         margin-top: 30px;
         min-width: 290px;
@@ -10,47 +17,47 @@
         height: 100%;
         font-size: 1rem;
         font-weight: 500;
-        &-card{
+        &-card {
             min-width: 290px;
             width: 290px;
-            & select{
+            & select {
                 width: 100%;
             }
-            & input{
+            & input {
                 width: 100%;
             }
         }
     }
-    &-crud{
+    &-crud {
         font-size: 1rem;
         margin-top: 15px;
         min-width: 290px;
         width: 290px;
         font-weight: 500;
-        &-card{
+        &-card {
             border-radius: 12px;
             margin: 15px auto;
             min-width: 290px;
             width: 290px;
-            &-title{
+            &-title {
                 padding: 10px;
             }
-            &-titles{
+            &-titles {
                 margin: 4px auto;
                 @include container;
                 @include flex-col;
             }
-            &-pdv{
+            &-pdv {
                 margin: 10px auto;
                 @include container;
                 @include flex-col;
             }
-            &-manager{
+            &-manager {
                 margin: 10px auto;
                 @include container;
                 @include flex-col;
             }
-            &-leader{
+            &-leader {
                 margin: 10px auto;
                 @include container;
                 @include flex-col;
@@ -59,18 +66,25 @@
     }
 }
 
-@media screen and(min-width: $md){
-    .admin{
-        &-new{
+@media screen and(min-width: $md) {
+    .admin {
+        &-new {
+            & form {
+                & input,
+                & select,
+                & option {
+                    font-size: 1.1rem;
+                }
+            }
             width: 320px;
             font-size: 1.1rem;
-            &-card{
+            &-card {
                 min-width: 320px;
                 width: 320px;
             }
         }
-        &-crud{
-            &-card{
+        &-crud {
+            &-card {
                 width: 320px;
             }
             width: 320px;
@@ -79,18 +93,25 @@
     }
 }
 
-@media screen and(min-width: $lg){
-    .admin{
-        &-new{
+@media screen and(min-width: $lg) {
+    .admin {
+        &-new {
+            & form {
+                & input,
+                & select,
+                & option {
+                    font-size: 1.2rem;
+                }
+            }
             width: 360px;
             font-size: 1.2rem;
-            &-card{
+            &-card {
                 min-width: 360px;
                 width: 360px;
             }
         }
-        &-crud{
-            &-card{
+        &-crud {
+            &-card {
                 width: 360px;
             }
             width: 360px;
@@ -99,37 +120,51 @@
     }
 }
 
-@media screen and(min-width: $tab){
-    .admin{
-        &-new{
+@media screen and(min-width: $tab) {
+    .admin {
+        &-new {
+            & form {
+                & input,
+                & select,
+                & option {
+                    font-size: 1.3rem;
+                }
+            }
             font-size: 1.3rem;
-            &-card{
+            &-card {
                 min-width: 500px;
                 width: 500px;
             }
             width: 500px;
             font-size: 1.3rem;
         }
-        &-crud{
+        &-crud {
             width: 500px;
             font-size: 1.3rem;
         }
     }
 }
 
-@media screen and(min-width: $tab-large){
-    .admin{
+@media screen and(min-width: $tab-large) {
+    .admin {
         @include flex-row;
         align-items: start;
-        &-new{
+        &-new {
+            & form {
+                & input,
+                & select,
+                & option {
+                    font-size: 1.4rem;
+                }
+            }
             margin-right: 25px;
             font-size: 1.4rem;
             width: fit-content;
-            &-card{
+            &-card {
                 @include container;
             }
         }
-        &-crud{
+        &-crud {
             width: fit-content;
             height: 100%;
             font-size: 1.4rem;
@@ -137,19 +172,19 @@
     }
 }
 
-@media screen and (min-width: $desk){
-    .admin{
+@media screen and (min-width: $desk) {
+    .admin {
         @include flex-row;
         align-items: start;
-        &-new{
+        &-new {
             margin-right: 25px;
             font-size: 1.4rem;
             width: 40%;
-            &-card{
+            &-card {
                 @include container;
             }
         }
-        &-crud{
+        &-crud {
             display: flex;
             flex-wrap: wrap;
             width: 55%;
@@ -158,13 +193,13 @@
     }
 }
 
-@media screen and (min-width: $desk-large){
-    .admin{
-        &-new{
+@media screen and (min-width: $desk-large) {
+    .admin {
+        &-new {
             margin-right: 10px;
         }
-        &-crud{
-            &-card{
+        &-crud {
+            &-card {
                 width: 390px;
             }
         }

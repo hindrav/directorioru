@@ -6,36 +6,37 @@ contacts = Blueprint("contacts", __name__)
 
 def queryContact(string):
     # Look the string on database and return all the contacts that match.
-    return Contact.query.filter(Contact.terr.like("%" + string + "%") | Contact.pdvnum.like("%" + string + "%") | Contact.pdvname.like("%" + string + "%") | Contact.manager.like("%" + string + "%") | Contact.leader.like("%" + string + "%")).all()
+    return Contact.query.filter(Contact.terr.like("%" + string + "%") |  Contact.reg.like("%" + string + "%") | Contact.pdvnum.like("%" + string + "%") | Contact.pdvname.like("%" + string + "%") | Contact.manager.like("%" + string + "%") | Contact.leader.like("%" + string + "%")).all()
 
 @contacts.route('/filter', methods=['GET', 'POST'])
 def filter():
-    data = request.get_json()
-    formString = data.get('formid')
-    formString = str(formString)
-    contacts = queryContact(formString)
-    contact_list = []
-    for contact in contacts:
-        contact_list.append(contact.terr)
-        contact_list.append(contact.reg)
-        contact_list.append(contact.pdvnum)
-        contact_list.append(contact.pdvname)
-        contact_list.append(contact.manager)
-        contact_list.append(contact.managerPhone)
-        contact_list.append(contact.leader)
-        contact_list.append(contact.leaderPhone)
-    if contacts:
-        # Transform array into a string.
-        contact_list = str(contact_list)
-        return contact_list
-    else:
-        return "404NOTFOUND"
+    if request.method == 'POST':
+        data = request.get_json()
+        formString = data.get('formid')
+        formString = str(formString)
+        contacts = queryContact(formString)
+        contact_list = []
+        for contact in contacts:
+            contact_list.append(contact.terr)
+            contact_list.append(contact.reg)
+            contact_list.append(contact.pdvnum)
+            contact_list.append(contact.pdvname)
+            contact_list.append(contact.manager)
+            contact_list.append(contact.managerPhone)
+            contact_list.append(contact.leader)
+            contact_list.append(contact.leaderPhone)
+        if contacts:
+            # Transform array into a string.
+            contact_list = str(contact_list)
+            return contact_list
+        else:
+            return "404NOTFOUND"
 
 @contacts.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
-@contacts.route('/admin')
+@contacts.route('/1049490Redunica1234')
 def admin():
     contacts = Contact.query.all()
     return render_template('admin.html', contacts=contacts)
