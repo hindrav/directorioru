@@ -165,15 +165,16 @@ body {
         &-search {
             &-header {
                 & img {
-                    width: 320px;
+                    width: 345px;
                 }
             }
             &-body {
                 transform: translateY(-25px);
                 & form {
-                    width: 320px;
+                    width: 345px;
                     & input {
                         height: 33px;
+                        font-size: 1.2rem;
                     }
                     & button {
                         padding: 8px;
@@ -211,16 +212,17 @@ body {
         &-search {
             &-header {
                 & img {
-                    width: 360px;
+                    // width: 360px;
+                    width: 385px;
                 }
             }
             &-body {
                 transform: translateY(-25px);
                 & form {
-                    width: 360px;
+                    width: 385px;
                     & input {
-                        height: 35px;
-                        font-size: 1.1rem;
+                        height: 38px;
+                        font-size: 1.3rem;
                     }
                     & button {
                         padding: 8px;
@@ -282,7 +284,7 @@ body {
                     width: 470px;
                     & input {
                         height: 40px;
-                        font-size: 1.2rem;
+                        font-size: 1.4rem;
                     }
                 }
             }
@@ -315,8 +317,7 @@ body {
                 & form {
                     width: 520px;
                     & input {
-                        height: 40px;
-                        font-size: 1.3rem;
+                        height: 42px;
                     }
                 }
             }
@@ -362,7 +363,7 @@ body {
                 & form {
                     width: 520px;
                     & input {
-                        font-size: 1.4rem;
+                        font-size: 1.5rem;
                         height: 44px;
                     }
                     & button {

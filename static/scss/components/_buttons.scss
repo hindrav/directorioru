@@ -1,9 +1,12 @@
 .btn-success{
-    // background linear gradient
     background: linear-gradient(to left, $color3);
     border: none;
     padding: 7px 14px;
     border-radius: 7px;
+}
+
+.btn-inst{
+    font-size: 1.2rem;
 }
 
 .search-load{
@@ -14,18 +17,18 @@
 
 @media screen and(min-width: $lg){
     .btn-inst, .btn-primary{
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         font-weight: 600;
     }
 }
 @media screen and(min-width: $tab){
     .btn-inst, .btn-primary{
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 }
 @media screen and(min-width: $tab-large){
     .btn-inst, .btn-primary{
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
     .search-load{
         font-size: 1.6rem;
