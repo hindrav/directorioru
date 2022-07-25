@@ -89,7 +89,7 @@ form.addEventListener('keypress', (e) => {
             e.preventDefault()
             const request = getValue()
                 // When user clicks on the button, while the request is being processed, display a loading message
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin search-load"></i>'
+            btn.innerHTML = '<i class="fas fa-sync fa-spin search-load"></i>'
             btn.disabled = true
             request.then(() => {
                 btn.disabled = false

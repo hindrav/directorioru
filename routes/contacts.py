@@ -25,6 +25,9 @@ def filter():
             contact_list.append(contact.managerPhone)
             contact_list.append(contact.leader)
             contact_list.append(contact.leaderPhone)
+
+        db.session.commit()
+
         if contacts:
             # Transform array into a string.
             contact_list = str(contact_list)
