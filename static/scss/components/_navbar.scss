@@ -6,7 +6,7 @@
         }
     }
     &-toggler{
-        margin-right: 10px;
+        margin-left: 12px;
         border: 2px solid;
         border-image-slice: 1;
         border-width: 2px;
@@ -20,6 +20,13 @@
         @include container;
         @include flex-col;
         justify-content: end;
+        & a:nth-child(1){
+            margin-bottom: 7px;
+        }
+    }
+    & .container-fluid{
+        display: flex;
+        justify-content: flex-start;
     }
 }
 
@@ -38,6 +45,11 @@
         &-brand{
             & img{
                 width: 170px;
+            }
+        }
+        &-nav{
+            & a:nth-child(1){
+                margin: 0 15px 0 0;
             }
         }
     }

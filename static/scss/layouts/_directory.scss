@@ -157,6 +157,10 @@ body {
 
 .managerPhone,
 .leaderPhone {
+    & span{
+        color: #000;
+        margin-right: 2px;
+    }
     text-decoration: none;
 }
 

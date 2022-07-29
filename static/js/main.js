@@ -52,11 +52,11 @@ async function getValue() {
                         </div>
                         <div class="manager-info">
                             <p class="card-text manager"><span style="color: #000";>Gerente Líder PDV:</span> <br> ${element[4]}</p>
-                            <a href="tel:${element[5]}"class="card-text managerPhone"><span style="color: #000";>Teléfono:</span> ${element[5]}</a>
+                            <a href="tel:${element[5]}"class="card-text managerPhone"><span>Teléfono:</span> <i class="fas fa-phone"></i> ${element[5]}</a>
                         </div>
                         <div class="leader-info">
                             <p class="card-text leader"><span style="color: #000";>Líder Comercial:</span> <br> ${element[6]}</p>
-                            <a href="tel:${element[7]}" class="card-text leaderPhone"><span style="color: #000";>Teléfono:</span> ${element[7]}</a>
+                            <a href="tel:${element[7]}" class="card-text leaderPhone"><span>Teléfono:</span> <i class="fas fa-phone"></i>${element[7]}</a>
                         </div>
                     </div>
                 `
@@ -73,7 +73,7 @@ btn.addEventListener('click', () => {
     if (form.value != '') {
         const request = getValue()
             // When user clicks on the button, while the request is being processed, display a loading message
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin search-load"></i>'
+        btn.innerHTML = '<i class="fas fa-sync fa-spin search-load"></i>'
         btn.disabled = true
         request.then(() => {
             btn.disabled = false
